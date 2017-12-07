@@ -1,0 +1,19 @@
+{
+  "name": "gatsby-starter-hello-world",
+  "description": "Gatsby hello world starter",
+  "license": "MIT",
+  "scripts": {
+    "develop": "gatsby develop --host localhost --port 8000",
+    "build": "gatsby build",
+    "serve": "gatsby serve"
+  },
+  "dependencies": {
+    "gatsby": "^1.9.117",
+    "gatsby-link": "^1.6.28",
+    "gatsby-plugin-styled-components": "^2.0.2",
+    "gatsby-plugin-typography": "^1.7.10",
+    "recompose": "^0.26.0",
+    "styled-components": "^2.2.3",
+    "styled-material": "0.1.9"
+  }
+}
