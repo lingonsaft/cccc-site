@@ -3,6 +3,9 @@ import {Column, Row} from 'styled-material/dist/src/layout'
 import styled from 'styled-components'
 import GroupImg from '../assets/group.png'
 import cardImg from '../assets/codecard.png'
+import codeCardImage from '../assets/if-typeof-number.png'
+import taskCardImage from '../assets/task-if-for-if.png'
+import closeCardImage from '../assets/close-card.png'
 import './main.css'
 
 const TitleBarBackground = styled.div`
@@ -42,11 +45,11 @@ const NumberItem = styled.div`
   font-family: 'numbersFont';
 `
 
-const SideNumbers = ({startinPoint = 0}) =>
+const SideNumbers = ({startinPoint = 0, amount = 20}) =>
   <Column style={{
     width: 60,
   }}>
-    {new Array(20).fill(0)
+    {new Array(amount).fill(0)
       .map((item, index) =>
         <NumberItem
           key={index}
@@ -79,7 +82,7 @@ const ExplainerText = styled.p`
 `
 
 const ExplainerTitle = styled.h2`
-  color: #5d636d;
+  color: #cccccc;
   font-size: 20px;
   max-width: 600px;
   font-family: 'bodyFont';
@@ -88,8 +91,9 @@ const ExplainerTitle = styled.h2`
 const Explainer = () =>
   <ExplainerWrap>
     <ExplainerTitle>
-      Place cards and they will code
+      Kickstarter video
     </ExplainerTitle>
+    <Video/>
     <ExplainerText>
       Ah, the technical interview. Nothing like it. Not only does it cause anxiety, but it causes anxiety for several different reasons.
     </ExplainerText>
@@ -116,7 +120,7 @@ const MainCardsWrap = styled(Row)`
 `
 
 const Card = styled.img`
-  width: 250px;
+
 `
 
 const CardWithText = styled(Column)`
@@ -136,21 +140,21 @@ const CardExplainer = styled.span`
 const MainCards = () =>
   <MainCardsWrap>
     <CardWithText>
-      <Card src={cardImg}/>
+      <Card src={codeCardImage}/>
       <CardExplainer>
-          codeCard
+          Code card
       </CardExplainer>
     </CardWithText>
     <CardWithText>
-      <Card src={cardImg}/>
+      <Card src={taskCardImage}/>
       <CardExplainer>
           Tasks card
       </CardExplainer>
     </CardWithText>
     <CardWithText>
-      <Card src={cardImg}/>
+      <Card src={closeCardImage}/>
       <CardExplainer>
-          } card
+          Close card
       </CardExplainer>
     </CardWithText>
   </MainCardsWrap>
@@ -190,11 +194,20 @@ const SignUp = () =>
   </SignUpWrap>
 
 
+const Video = () =>
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/ZerMnqc-5K0"
+      frameBorder="0"
+      allowFullScreen>
+    </iframe>
+
 export default () =>
   <div>
     <TitleBar />
     <Row>
-      <SideNumbers />
+      <SideNumbers amount={26} />
       <Column>
         <Higlighted />
         <MainContentRow style={{
@@ -213,7 +226,7 @@ export default () =>
     }}>
       <SideNumbers startinPoint={20}/>
       <MainContentRow style={{flex: 1}}>
-        <SignUp />
+
       </MainContentRow>
     </Row>
   </div>
