@@ -109,7 +109,6 @@ body {
 	padding: 0 0 0 2em;
 	width: 100%;
   text-align: left;
-
 }
 
 .input__label--kyo::after {
@@ -122,18 +121,20 @@ body {
 	height: 100%;
 	background: #292C35;
   opacity: 0;
-	-webkit-transition: all 0.3s;
-  transition: all 0.3s;
+	-webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
 	pointer-events: none;
 }
 
 .input__label-content--kyo {
   padding: 0.5em 0;
-  font-family: 'bodyFont';
+	font-family: 'bodyFont';
+	-webkit-transition: color 0.3s;
+  transition: color 0.3s;
 }
 
 .input__field--kyo:focus,
-.input__field--kyo:focus +  .input__label--kyo .input__label-content--kyo {
+.input__field--kyo:focus + .input__label--kyo .input__label-content--kyo {
 	z-index: 10000;
 }
 
@@ -143,5 +144,19 @@ body {
 
 .input__field--kyo:focus + .input__label--kyo::after {
   opacity: 1;
-  color: #6a7989;
 }
+
+
+/* video */
+@media (max-width: 700px) {
+ iframe {
+	 width: 400px;
+ }
+}
+
+@media (max-width: 540px) {
+	iframe {
+		width: 300px;
+		height: 200px;
+	}
+ }
