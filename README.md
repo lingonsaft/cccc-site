@@ -1,3 +1,4 @@
-# cccc-site
+# CodeCardCodingCards
 
-site of cccc
+CodeCardCodingCards is a fun Javascript card game where you code with cards.
+
